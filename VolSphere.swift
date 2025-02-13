@@ -27,7 +27,7 @@ if let radiusString = readLine(), let radiusFloat = Float(radiusString) {
         let volume = (4.0/3.0) * (Float.pi*pow(radiusFloat, 3))
 
         // Print volume
-        print("\(volume)")
+        print("volume = \(volume) cm^3")
 
     // Tell user number is negative
     } else {
