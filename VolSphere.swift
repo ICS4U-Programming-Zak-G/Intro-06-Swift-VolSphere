@@ -15,21 +15,25 @@ import Foundation
 print("This program calculates the volume of a sphere.")
 
 // Get user input
-print("Please enter the radius (cm): .")
-let radius = readLine()
+print("Please enter the radius (cm): ")
 
-// Cast radius to float
-let radiusFloat = (radius, !as! NSString)!floatValue
+// Cast user input to float
+if let radiusString = readLine(), let radiusFloat = Float(radiusString) {
 
-// Check if number is positive
-if (radiusFloat >= 0 ) {
-    // Calculate volume
-    let volume = (3.0/4.0) * (Double.pi*pow(radiusFloat, 3.0))
+    // Check if number is positive
+    if (radiusFloat >= 0 ) {
 
-    // Print volume
-    print(volume)
+        // Calculate volume
+        let volume = (4.0/3.0) * (Float.pi*pow(radiusFloat, 3))
 
-// Tell user number is negative
+        // Print volume
+        print("\(volume)")
+
+    // Tell user number is negative
+    } else {
+        print("No negative numbers allowed.")
+    }
+
 } else {
-    print("No negative numbers allowed.")
+    print("Invalid")
 }
